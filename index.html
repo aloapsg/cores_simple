@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="cores">
+    <meta name="author" content="GIL UNAM">
+
+    <title>CORES</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="narrow-jumbotron.css" rel="stylesheet">
+  </head>
+  <body>  
+    <div class="container text-center">
+      <div class="jumbotron">
+        <h1 class="display-3 text-center"> C O R E S </h1>
+        <p class="lead text-center">CORES stand for corpus de redes sociales</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">COSA LEGAL</a></p>
+      </div>
+<div style="display:none">
+      <div class="container text-center">
+        <div class="text-center">
+          <h5>Gracias por ayudar a que este proyecto crezca</h5>
+          <p>Hay dos formas de aportar tus datos:</p>
+            <a class="btn" href="#" role="button" data-toggle="tooltip" data-placement="right" title="Haz click para ir al tutorial">subir un archivo .txt</a>
+            <a class="btn" href="#" role="button" data-toggle="tooltip" data-placement="right" title="Haz click para ir al tutorial">subir un archivo .html</a>
+        </div>
+      </div>
+      
+        <div id="inic">
+            <label class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Elegir archivo<input type="file" id="fileinput" hidden></label>
+              <button class="btn btn-light" onclick="mform()">Aportar</button>
+          </div>
+          <p></p>
+</div>
+        </div> 
+        <div class="container text-center">
+             <button class="btn btn-light" onclick="variabl1()" id="new">Nueva conversación</button>
+            <div class="container text-center">
+          <div class="alert alert-warning" style="display:none" id="heyb">Por favor contesta toda la información</div>
+          
+                <div id="mform" style="display:none">
+                <div id="who">
+                    <h7>¿quién aporta esta conversación?</h7>
+                      <select id="usrs" onchange="validate()">
+                        </select>
+                    </div>
+                </div>
+          <p></p>
+                <div>
+                    <div id="variabls1" style="display:none">
+                        <div class="alert alert-info" style="display:none" id="us1">USUARIO 1</div>
+                        <div>
+                            Edad
+                            <select id="edad" onchange="di('edad',0)">
+                            </select>
+                        </div>
+                        <div> 
+                            Género
+                            <select id="genero" onchange="di('genero',1)">
+                            </select>
+                        </div>
+                        <div>
+                            Orientación sexual
+                            <select id="oSexual"  onchange="di('oSexual',2)">
+                            </select>
+                        </div>
+                        <div>
+                            Lugar de nacimiento
+                            <select id="lugarNac"  onchange="di('lugarNac',3)">
+                            </select>
+                        </div>
+                        <p></p>
+                        <div class="form-group">
+                            Lugar de residencia
+                            <div>
+                                <button onclick="choose(1)">CP</button>
+                                <button onclick="choose(2)">Delegación y colonia</button>
+                            </div>
+                            <div style="display: none" id="residencia1">
+                            <input type="text" id="codigo_postal" placeholder="ej. 14030">
+                            <button id="ay" onclick="code_post(1)">Elegir colonia</button>
+                            <select id="colonias" onchange="add()">
+                            </select>
+                            </div>
+                            <div style="display: none" id="residencia2">
+                                <div>
+                                <button onclick="deleg()">CDMX</button>
+                                <button onclick="mun()">OTROS</button>
+                                </div>
+                                
+                              <div style="display: none" id="delegaciones">
+                                 <select id="del" onchange="add()">
+                                 </select>
+                              </div>  
+                                
+                                <div style="display: none" id="otrosMun">
+                                 Municipio <input type="text" id="mun" placeholder="ej. Chimalhuacan">
+                              </div>  
+                                
+                            Colonia <input type="text" id="colonia" placeholder="ej. Las animas">
+                                
+                                
+                            </div>
+                        </div>
+                        <div>
+                            Nivel de educación
+                            <select id="nivEdu" onchange="di('nivEdu',5)">
+                            </select>
+                            <div id="carreras" style="display:none">Elige tu carrera
+                                <select id="carrera"  onchange="facs()">
+                                </select>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            Ocupación
+                            <select id="ocup"  onchange="ocu(0)">
+                            </select>
+                            
+                            <div id="job" style="display:none">Profesión u oficio
+                            <input id="prof" type="text" placeholder="escribe">
+                            </div>
+                        </div>
+                        <div>
+                            Otras lenguas
+                            <select id="otrLenguas" class="dropdown" onchange="di('otrLenguas',7)">
+                            </select>
+                            <button onclick="otroLenguas()">+</button>
+                            <div style="display: none" id="leng2">
+                                <select id="otrLenguas2" class="dropdown" onchange="di('otrLenguas',7)">
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            Relación con el otro usuario
+                            <select id="relacion" onchange="di('relacion',8)">
+                            </select> 
+                        </div>
+                        <p></p>
+                        
+                        <button class="btn btn_dark" onclick="variabl2()">Pasar con usuario 2</button>
+                    </div>
+                    
+                    
+                    <div id="variabls2" style="display:none">
+                        <div class="alert alert-info" style="display:none" id="us2">USUARIO 2</div>
+                        <div>
+                            Edad
+                            <select id="edad2" onchange="di2('edad2',1)">
+                            </select>
+                        </div>
+                        <div>
+                            Género
+                            <select id="genero2" onchange="di2('genero2',2)">
+                            </select>
+                        </div>
+                        <div>
+                            Orientación sexual
+                            <select id="oSexual2" onchange="di2('oSexual2',3)">
+                            </select>
+                        </div>
+                        <div>
+                            Lugar de nacimiento
+                            <select id="lugarNac2" onchange="di2('lugarNac2',4)">
+                            </select>
+                        </div>
+                        <p></p>
+                        <div class="form-group">
+                            Lugar de residencia
+                            <div>
+                                <button onclick="choose2(1)">CP</button>
+                                <button onclick="choose2(2)">Delegación y colonia</button>
+                            </div>
+                            <div style="display: none" id="residencia3">
+                            <input type="text" id="codigo_postal2" placeholder="ej. 14030">
+                            <button id="ay" onclick="code_post2(1)">Elegir colonia</button>
+                            <select id="colonias2" onchange="add()">
+                            </select>
+                            </div>
+                            <div style="display: none" id="residencia4">
+                                <div>
+                                <button onclick="deleg2()">CDMX</button>
+                                <button onclick="mun2()">OTROS</button>
+                                </div>
+                                
+                              <div style="display: none" id="delegaciones2">
+                                 <select id="del2" onchange="di2()">
+                                 </select>
+                              </div>  
+                                
+                                <div style="display: none" id="otrosMun2">
+                                 Municipio <input type="text" id="mun" placeholder="ej. Chimalhuacan">
+                              </div>  
+                                
+                            Colonia <input type="text" id="colonia" placeholder="ej. Las animas">  
+                            </div>
+                        </div>
+                        
+                        <div>
+                            Nivel educativo
+                            <select id="nivEdu2" onchange="di2('nivEdu',6)">
+                            </select>
+                            <div id="carreras2" style="display:none">Elige tu carrera
+                                <select id="carrera2"  onchange="facultad()">
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            Ocupación
+                            <select id="ocup2"  onchange="ocu2(0)">
+                            </select>
+                            
+                            <div id="job2" style="display:none">Profesión u oficio
+                            <input id="prof2" type="text" placeholder="escribe">
+                            </div>
+                        </div>
+                        <div>
+                            Otras lenguas
+                            <select id="otrLenguas2" class="dropdown" onchange="di2('otrLenguas',8)">
+                            </select>
+                            <button onclick="otroLenguas2()">+</button>
+                            <div style="display: none" id="leng3">
+                                <select id="otrLenguas3" class="dropdown" onchange="di('otrLenguas',8)">
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn_dark" onclick="reset()">Terminar</button>
+                    </div>
+                </div>
+        </div>
+      </div>
+      
+      <script src="user.js"></script>
+      
+        <!-- external scripts -->
+        <script src="https://api-codigos-postales.herokuapp.com/v2/codigo_postal/"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTg3IEO1lXkxkhs3a4ouS-rVTYB557hMo&callback=initMap" async defer></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="semantic/dist/semantic.min.js"></script>
+        
+        <!-- application scripts -->
+        <script src="app.js"></script>
+        <script src="app-services/user.service.js"></script>
+        <script src="app-services/flash.service.js"></script>
+        <script src="home/index.controller.js"></script>
+        <script src="upload/index.controller.js"></script>
+
+    </body>
+    <footer class="footer text-center">
+      <div class="container">
+        <span class="text-muted"><p>&copy; GIL UNAM IINGEN 2017</p></span>
+      </div>
+    </footer>
+</html>
